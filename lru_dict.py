@@ -33,13 +33,6 @@ class _LruNode(object):
             prev_node._next = next_node
         return self
 
-    def insert_before(self, target):
-        self._next = target
-        self._prev = target._prev
-        target._prev = self
-        if self._prev:
-            self._prev._next = self
-
     def insert_after(self, target):
         self._next = target._next
         self._prev = target
